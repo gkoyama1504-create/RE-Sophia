@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RE:SOPHIA｜帰国子女枠の大学受験に向けたTOEFL演習サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1726; --navy:#18293F; --navy-soft:#2C405A;
+  --brass:#B18F4E; --brass-light:#D8BE87;
+  --paper:#FBFAF7; --line:#DFDACE; --text:#1C232C; --muted:#6B7480;
+  --good:#1F6B52; --bad:#9C3A33;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+button{font-family:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid rgba(216,190,135,.28)}
+.hbar{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.16em;color:#fff;text-decoration:none;white-space:nowrap}
+.logo i{font-style:normal;color:var(--brass);margin:0 .04em}
+.logo span{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;color:var(--brass-light);font-weight:500;margin-top:2px}
+nav{margin-left:auto;display:flex;gap:20px;align-items:center}
+nav a{color:#D6D9DE;text-decoration:none;font-size:13.5px;letter-spacing:.04em}
+nav a:hover{color:var(--brass-light)}
+.hcta{background:var(--brass);color:#11192A;font-weight:700;font-size:13px;padding:9px 18px;border:0;cursor:pointer;letter-spacing:.04em}
+.hcta:hover{background:var(--brass-light)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;padding:7px 12px;font-size:13px;cursor:pointer}
+
+.hero{background:var(--ink);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-170px;top:-130px;width:520px;height:520px;border:1px solid rgba(177,143,78,.22);border-radius:50%}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:.3em;color:var(--brass-light);font-weight:500;margin:0}
+.byline{font-size:13px;color:#9BA5B2;margin:14px 0 0;padding-left:16px;border-left:1px solid rgba(177,143,78,.6)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(29px,5vw,48px);line-height:1.45;margin:22px 0 0;letter-spacing:.02em}
+.hero .lead{color:#C9CED6;font-size:15.5px;line-height:2.05;max-width:44em;margin:26px 0 0}
+.rule{width:56px;height:2px;background:var(--brass);margin:32px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:44px;margin-top:36px}
+.stat b{font-family:var(--serif);font-size:32px;font-weight:600;color:#fff;line-height:1}
+.stat i{display:block;font-style:normal;font-size:12.5px;color:#9BA5B2;margin-top:9px;letter-spacing:.05em}
+.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.btn-primary{background:var(--brass);color:#11192A;border:0;padding:15px 30px;font-weight:700;font-size:14.5px;cursor:pointer;letter-spacing:.05em}
+.btn-primary:hover{background:var(--brass-light)}
+.btn-ghost{background:none;color:#fff;border:1px solid rgba(255,255,255,.4);padding:15px 28px;font-size:14.5px;cursor:pointer}
+.btn-ghost:hover{border-color:var(--brass-light);color:var(--brass-light)}
+
+section{padding:74px 0}
+.sec-head{margin-bottom:38px}
+.sec-head .eyebrow{color:var(--brass)}
+.sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.3vw,30px);font-weight:600;margin:14px 0 0;letter-spacing:.02em;line-height:1.55}
+.sec-head p{color:var(--muted);margin:16px 0 0;font-size:15px;max-width:46em}
+
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cell{background:#fff;padding:32px 28px}
+.cell .en{font-size:11px;letter-spacing:.24em;color:var(--brass);margin:0}
+.cell h3{font-family:var(--serif);font-size:18.5px;margin:12px 0 12px;font-weight:600;line-height:1.65}
+.cell p{font-size:14px;color:var(--muted);margin:0;line-height:2}
+.cell .say{margin-top:18px;padding-top:16px;border-top:1px solid #EFEDE7;font-family:var(--serif);font-size:14.5px;color:var(--navy);line-height:1.9}
+.cell button{margin-top:20px;width:100%;background:var(--navy);color:#fff;border:0;padding:12px;font-size:13.5px;cursor:pointer;letter-spacing:.05em}
+.cell button:hover{background:var(--navy-soft)}
+
+#practice{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:32px;flex-wrap:wrap}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:14px 20px;font-size:14.5px;color:var(--muted);cursor:pointer;letter-spacing:.04em}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brass);font-weight:700}
+.tab:hover{color:var(--ink)}
+.pane{display:none}
+.pane.on{display:block}
+
+.picker{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+.chip{border:1px solid var(--line);background:#fff;padding:9px 17px;font-size:13px;cursor:pointer;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip:hover{border-color:var(--navy-soft)}
+
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+.passage{border:1px solid var(--line);background:var(--paper);padding:30px 32px;max-height:74vh;overflow-y:auto;position:sticky;top:86px}
+.passage h3{font-family:var(--serif);font-size:20px;margin:0 0 4px;font-weight:600}
+.passage .meta{font-size:12px;color:var(--muted);letter-spacing:.06em;margin:0 0 20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.passage p{font-family:var(--serif);font-size:16px;line-height:2.1;margin:0 0 18px;max-width:68ch}
+
+.qwrap{display:flex;flex-direction:column;gap:18px}
+.q{border:1px solid var(--line);padding:22px 24px;background:#fff}
+.qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.qn{font-size:11.5px;letter-spacing:.18em;color:var(--brass);font-weight:700;margin:0}
+.qtype{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:2px 8px;white-space:nowrap}
+.qt{font-size:15px;margin:10px 0 16px;line-height:1.85}
+.opt{display:block;border:1px solid var(--line);padding:11px 15px;margin-bottom:9px;cursor:pointer;font-size:14.5px;line-height:1.7}
+.opt:hover{border-color:var(--navy-soft)}
+.opt input{margin-right:10px}
+.opt.sel{border-color:var(--navy);background:#F5F7FA}
+.opt.correct{border-left:3px solid var(--good);background:#F1F7F4;border-color:#BFD9CD}
+.opt.wrong{border-left:3px solid var(--bad);background:#FBF2F1;border-color:#E3C4C1}
+.exp{margin-top:14px;padding:15px 17px;background:#F6F7F9;border-left:2px solid var(--navy-soft);font-size:13.5px;line-height:1.95;display:none}
+.exp.on{display:block}
+.exp b{color:var(--navy)}
+.verdict{font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:6px;display:block}
+.verdict.ok{color:var(--good)}
+.verdict.ng{color:var(--bad)}
+.note-r{display:block;margin-top:8px;color:var(--muted)}
+
+.actions{display:flex;gap:12px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.btn-dark{background:var(--navy);color:#fff;border:0;padding:14px 30px;font-size:14px;cursor:pointer;letter-spacing:.05em}
+.btn-dark:hover{background:var(--navy-soft)}
+.btn-dark:disabled{background:#C9CCD2;cursor:not-allowed}
+.btn-line{background:#fff;border:1px solid var(--line);padding:14px 22px;font-size:14px;cursor:pointer}
+.btn-line:hover{border-color:var(--navy)}
+.score-note{font-size:14px;color:var(--muted)}
+.score-note strong{font-family:var(--serif);font-size:22px;color:var(--ink)}
+
+.player{border:1px solid var(--line);background:var(--ink);color:#fff;padding:26px 28px}
+.player .ptitle{font-family:var(--serif);font-size:19px;font-weight:600;margin:0}
+.player .pmeta{font-size:12px;color:#9BA5B2;letter-spacing:.06em;margin:6px 0 0}
+.pcontrols{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.play{background:var(--brass);color:#11192A;border:0;padding:13px 26px;font-weight:700;font-size:14px;cursor:pointer}
+.play:hover{background:var(--brass-light)}
+.pbtn{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;padding:11px 16px;font-size:13px;cursor:pointer}
+.pbtn:hover{border-color:var(--brass-light)}
+.speed{display:flex;border:1px solid rgba(255,255,255,.35)}
+.speed button{background:none;border:0;color:#fff;padding:11px 14px;font-size:12.5px;cursor:pointer}
+.speed button[aria-pressed="true"]{background:rgba(216,190,135,.9);color:#11192A;font-weight:700}
+.now{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:14.5px;line-height:1.9;color:#E7E9EC;min-height:2.6em;font-family:var(--serif)}
+.now em{font-style:normal;color:var(--brass-light);font-size:12px;letter-spacing:.12em;display:block;margin-bottom:4px}
+.script{border:1px solid var(--line);border-top:0;padding:24px 28px;background:var(--paper);display:none}
+.script.on{display:block}
+.script .line{font-family:var(--serif);font-size:15px;line-height:2;margin-bottom:12px}
+.script .line b{color:var(--brass);font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;display:block;font-weight:700}
+.script .line.active{background:#FBF3E2}
+.warn{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+.vgrid{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+.card{border:1px solid var(--line);background:#fff;padding:50px 34px;text-align:center;min-height:340px;display:flex;flex-direction:column;justify-content:center;cursor:pointer;position:relative}
+.card .lv{position:absolute;top:16px;left:20px;font-size:10.5px;letter-spacing:.18em;color:var(--brass);font-weight:700}
+.card .word{font-family:var(--serif);font-size:clamp(30px,5vw,42px);font-weight:600;margin:0}
+.card .pos{font-size:12.5px;color:var(--muted);margin:10px 0 0;letter-spacing:.08em}
+.card .hint{font-size:12px;color:#A6ADB6;margin-top:26px;letter-spacing:.05em}
+.card .back{border-top:1px solid var(--line);margin-top:24px;padding-top:22px}
+.card .def{font-family:var(--serif);font-size:17px;line-height:1.9;margin:0}
+.card .mean{font-size:15px;color:var(--navy);margin:12px 0 0;font-weight:700}
+.card .ex{font-size:14px;margin:18px 0 0;line-height:1.9;font-family:var(--serif)}
+.card .exja{font-size:13px;color:var(--muted);margin:6px 0 0}
+.card .trap{margin:16px 0 0;font-size:12.5px;color:var(--bad);line-height:1.8}
+.tk{cursor:pointer;border-radius:2px}
+.tk:hover{background:#FBF3E2}
+.tk.hit{border-bottom:1px dotted var(--brass)}
+.pop{position:absolute;z-index:80;width:290px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--navy);box-shadow:0 10px 30px rgba(14,23,38,.18);padding:18px 20px 16px;text-align:left;font-family:var(--sans)}
+.pop[hidden]{display:none}
+.pop .pw{font-family:var(--serif);font-size:21px;font-weight:600;margin:0;line-height:1.4}
+.pop .pp{font-size:11.5px;color:var(--muted);letter-spacing:.08em;margin:2px 0 10px}
+.pop .pd{font-size:14px;line-height:1.8;margin:0;font-family:var(--serif)}
+.pop .pm{font-size:14px;color:var(--navy);font-weight:700;margin:8px 0 0}
+.pop .px{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.8}
+.pop .pact{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.pop .pact a,.pop .pact button{font-size:12px;padding:7px 11px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--text);cursor:pointer}
+.pop .pact a:hover,.pop .pact button:hover{border-color:var(--navy)}
+.pop .pact .go{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pop .close{position:absolute;top:8px;right:10px;background:none;border:0;font-size:17px;color:var(--muted);cursor:pointer;line-height:1}
+.vnav{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.side{border:1px solid var(--line);padding:24px 22px;background:var(--paper)}
+.side h4{font-family:var(--serif);font-size:16px;margin:0 0 14px;font-weight:600}
+.side .row{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-top:1px solid var(--line);gap:10px}
+.side .row span:last-child{font-weight:700;text-align:right}
+.bar{height:3px;background:#E8E4DA;margin-top:14px}
+.bar i{display:block;height:100%;background:var(--brass);width:0}
+.vlist{margin-top:14px;max-height:210px;overflow-y:auto;font-size:13px}
+.vlist div{padding:6px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.vlist .ok{color:var(--good)}
+.vlist .ng{color:var(--bad)}
+
+/* score designer */
+.sim{display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start}
+.slider-row{border-bottom:1px solid var(--line);padding:18px 0}
+.slider-row .lab{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.slider-row .lab b{font-family:var(--serif);font-size:24px;font-weight:600}
+.slider-row .sub{font-size:12px;color:var(--muted);margin:2px 0 10px}
+input[type=range]{width:100%;accent-color:var(--navy)}
+.simout{border:1px solid var(--line);background:var(--ink);color:#fff;padding:28px 26px}
+.simout .tot{font-family:var(--serif);font-size:52px;font-weight:600;line-height:1;margin:6px 0 0}
+.simout .tot small{font-size:16px;color:#9BA5B2}
+.simout .gap{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;line-height:1.95;color:#D5D9DE}
+.simout .gap b{color:var(--brass-light)}
+.target{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.target button{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;padding:8px 14px;font-size:13px;cursor:pointer}
+.target button[aria-pressed="true"]{background:var(--brass);color:#11192A;border-color:var(--brass);font-weight:700}
+
+/* planner */
+.planner{background:var(--ink);color:#fff}
+.planner .sec-head h2{color:#fff}
+.planner .sec-head p{color:#A9B2BC}
+.pform{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;margin-bottom:32px}
+.pform label{font-size:12.5px;color:#9BA5B2;display:block;margin-bottom:8px;letter-spacing:.06em}
+.pform input[type=date]{background:#fff;border:0;padding:12px 14px;font-size:15px;font-family:inherit}
+.tl{border-left:1px solid rgba(216,190,135,.4);padding-left:28px;margin-left:6px}
+.tlitem{position:relative;padding-bottom:30px}
+.tlitem::before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;background:var(--brass);border-radius:50%}
+.tlitem.past::before{background:#4A5666}
+.tlitem .when{font-size:12px;letter-spacing:.14em;color:var(--brass-light)}
+.tlitem h4{font-family:var(--serif);font-size:18px;margin:8px 0 8px;font-weight:600}
+.tlitem p{margin:0;color:#A9B2BC;font-size:14px;line-height:1.95;max-width:44em}
+.tlitem.past h4{color:#8A929C}
+
+/* checklist */
+.check{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.ci{background:#fff;padding:26px 26px;display:flex;gap:16px;align-items:flex-start;cursor:pointer}
+.ci .box{width:18px;height:18px;border:1px solid var(--navy-soft);flex:0 0 18px;margin-top:5px;position:relative}
+.ci.done .box{background:var(--navy)}
+.ci.done .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.ci h4{margin:0 0 8px;font-size:15.5px;font-family:var(--serif);font-weight:600}
+.ci p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.9}
+.ci.done h4{color:var(--muted);text-decoration:line-through}
+
+.record{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.rec{background:#fff;padding:28px 26px}
+.rec .en{font-size:11px;letter-spacing:.24em;color:var(--brass);margin:0}
+.rec .num{font-family:var(--serif);font-size:36px;font-weight:600;margin:10px 0 0;line-height:1}
+.rec .num small{font-size:15px;color:var(--muted);font-weight:400}
+.rec .lbl{font-size:13px;color:var(--muted);margin:8px 0 0}
+
+footer{background:#0A111D;color:#8C95A1;padding:52px 0;font-size:13px}
+footer .flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer ul{list-style:none;padding:0;margin:0;line-height:2.1}
+footer a{text-decoration:none}
+footer a:hover{color:var(--brass-light)}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;letter-spacing:.03em;line-height:1.9}
+
+@media (max-width:900px){
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(216,190,135,.28)}
+  nav.open a{padding:11px 0;border-top:1px solid rgba(255,255,255,.1);width:100%}
+  .menu-btn{display:block}
+  header{position:relative}
+  .split,.vgrid,.sim,.cols3,.check,.record{grid-template-columns:1fr}
+  .passage{position:static;max-height:none}
+  section{padding:54px 0}
+  .stats{gap:28px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hbar">
+    <a class="logo" href="#top">RE<i>:</i>SOPHIA<span>帰国生入試のためのTOEFL演習</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false">メニュー</button>
+    <nav id="nav">
+      <a href="#gap">つまずき</a>
+      <a href="#practice">演習</a>
+      <a href="#planner">出願逆算</a>
+      <a href="#pitfalls">提出の落とし穴</a>
+      <button class="hcta" data-goto="reading">いま解く</button>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">FOR RETURNEE APPLICANTS 帰国子女枠の大学受験</p>
+    <p class="byline">上智大学に在学中の帰国生が作っています</p>
+    <h1>英語で困ったことはない。<br>それでも、スコアが止まる。</h1>
+    <div class="rule"></div>
+    <p class="lead">帰国生入試で提出するTOEFLのスコアは、話せるかどうかを測るものではありません。学術的な文章を時間内に処理し、講義の論点を追い、決まった型で書く力を測るテストです。現地校で困らなかった人ほど、Reading と Writing で止まります。ここでは、その差が出る場所だけを取り出して演習できます。</p>
+    <div class="stats">
+      <div class="stat"><b>90+</b><i>難関校で語られる目安</i></div>
+      <div class="stat"><b>2年</b><i>スコアの有効期間の目安</i></div>
+      <div class="stat"><b>36語</b><i>英英定義つき語彙</i></div>
+      <div class="stat"><b>全問</b><i>日本語解説つき</i></div>
+    </div>
+    <div class="hero-actions">
+      <button class="btn-primary" data-goto="reading">弱点になりやすいReadingから</button>
+      <button class="btn-ghost" data-goto="sim">スコア配分を設計する</button>
+    </div>
+  </div>
+</div>
+
+<section id="gap">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">WHERE RETURNEES LOSE POINTS</p>
+      <h2>帰国生が落とすのは、英語力ではなく別の3つ。</h2>
+      <p>現地校で普通に生活できていた人が、TOEFLで思ったほど伸びない理由はだいたい決まっています。自分がどれに当たるかを先に決めてから演習に入ってください。</p>
+    </div>
+    <div class="cols3">
+      <article class="cell">
+        <p class="en">READING</p>
+        <h3>会話で使う英語と、論文の英語は別の語彙で書かれている</h3>
+        <p>友達との会話やSNSでは一度も出会わない語が、TOEFLの本文には固まって出てきます。読めているつもりで、実は段落の主張を支える1語を飛ばしている。設問の言い換えもその層の語で作られます。</p>
+        <p class="say">読めた感覚と、<br>正解できる読みは別物。</p>
+        <button data-goto="reading">Readingを解く</button>
+      </article>
+      <article class="cell">
+        <p class="en">LISTENING</p>
+        <h3>得意なセクションを、取り切れていない</h3>
+        <p>帰国生はListeningで稼ぐのが前提です。内容は分かるのに、話者の意図を問う問題や講義の構成を問う問題で1〜2問落とす。その数問が、総合点の届く届かないを分けます。</p>
+        <p class="say">分かったかではなく、<br>満点だったかで見る。</p>
+        <button data-goto="listening">Listeningを解く</button>
+      </article>
+      <article class="cell">
+        <p class="en">SCHEDULE</p>
+        <h3>出願の締切から逆算していない</h3>
+        <p>スコアは受けたその日に大学へ届くものではありません。出願期間・スコアの有効期限・大学への送付方法まで含めて逆算しないと、点はあるのに出願できない事態が起きます。</p>
+        <p class="say">最後の受験日は、<br>締切の日ではない。</p>
+        <button data-goto="plan">逆算表を作る</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">PRACTICE</p>
+      <h2>演習</h2>
+      <p>設問には出題タイプを表示しています。間違えた問題が特定のタイプに偏っていたら、それがあなたの穴です。</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-pane="reading">Reading</button>
+      <button class="tab" role="tab" aria-selected="false" data-pane="listening">Listening</button>
+      <button class="tab" role="tab" aria-selected="false" data-pane="vocab">Vocabulary</button>
+      <button class="tab" role="tab" aria-selected="false" data-pane="sim">スコア設計</button>
+    </div>
+
+    <div class="pane on" id="pane-reading" role="tabpanel">
+      <div class="picker" id="rPicker"></div>
+      <div class="split">
+        <div class="passage" id="rPassage"></div>
+        <div>
+          <div class="qwrap" id="rQuestions"></div>
+          <div class="actions">
+            <button class="btn-dark" id="rGrade">採点する</button>
+            <button class="btn-line" id="rReset">解き直す</button>
+            <span class="score-note" id="rScore"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-listening" role="tabpanel">
+      <div class="picker" id="lPicker"></div>
+      <div class="split">
+        <div>
+          <div class="player" id="lPlayer"></div>
+          <div class="script" id="lScript"></div>
+          <p class="warn">音声はブラウザの読み上げ機能（Web Speech API）で再生します。Chrome / Edge / Safari 推奨。1回目はメモを取らずに聴き、2回目でメモを取ってください。</p>
+        </div>
+        <div>
+          <div class="qwrap" id="lQuestions"></div>
+          <div class="actions">
+            <button class="btn-dark" id="lGrade">採点する</button>
+            <button class="btn-line" id="lReset">解き直す</button>
+            <span class="score-note" id="lScore"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-vocab" role="tabpanel">
+      <div class="picker" id="vPicker"></div>
+      <div class="vgrid">
+        <div>
+          <div id="vMain"></div>
+          <div class="vnav" id="vNav"></div>
+        </div>
+        <aside class="side">
+          <h4>この学習の状況</h4>
+          <div class="row"><span>モード</span><span id="vMode">カード</span></div>
+          <div class="row"><span>対象の語数</span><span id="vTotal">0</span></div>
+          <div class="row"><span>いま何語目</span><span id="vPos">0</span></div>
+          <div class="bar"><i id="vBar"></i></div>
+          <div class="vlist" id="vLog"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-sim" role="tabpanel">
+      <div class="sim">
+        <div>
+          <div class="slider-row">
+            <div class="lab"><span>Reading</span><b id="vR">18</b></div>
+            <p class="sub">帰国生がいちばん伸ばしやすく、いちばん落としているセクション</p>
+            <input type="range" min="0" max="30" value="18" id="sR">
+          </div>
+          <div class="slider-row">
+            <div class="lab"><span>Listening</span><b id="vL">26</b></div>
+            <p class="sub">満点に近づけて総合点を支える。29〜30を狙う</p>
+            <input type="range" min="0" max="30" value="26" id="sL">
+          </div>
+          <div class="slider-row">
+            <div class="lab"><span>Speaking</span><b id="vS">24</b></div>
+            <p class="sub">流暢さより、聞かれた形式で答え切れているか</p>
+            <input type="range" min="0" max="30" value="24" id="sS">
+          </div>
+          <div class="slider-row">
+            <div class="lab"><span>Writing</span><b id="vW">20</b></div>
+            <p class="sub">内容の良さではなく、型と展開で採点される</p>
+            <input type="range" min="0" max="30" value="20" id="sW">
+          </div>
+          <p class="warn">いまのスコア（または直近の模試）を入れてください。目標との差と、どこを伸ばすのが最短かを出します。</p>
+        </div>
+        <div class="simout">
+          <p class="eyebrow">TOTAL</p>
+          <p class="tot" id="simTotal">88<small> / 120</small></p>
+          <div class="target" id="simTarget">
+            <button data-t="70" aria-pressed="false">70</button>
+            <button data-t="80" aria-pressed="false">80</button>
+            <button data-t="90" aria-pressed="true">90</button>
+            <button data-t="100" aria-pressed="false">100</button>
+          </div>
+          <p class="gap" id="simGap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="planner" id="planner">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">COUNTDOWN</p>
+      <h2>出願日から逆算する。</h2>
+      <p>志望校の出願締切を入れてください。いつまでに受け終えるか、いつ送付手配をするかを逆算します。日程は一般的な目安なので、最終的な日付は必ず各大学の募集要項で確認してください。</p>
+    </div>
+    <div class="pform">
+      <div>
+        <label for="deadline">出願書類の締切日</label>
+        <input type="date" id="deadline">
+      </div>
+    </div>
+    <div class="tl" id="timeline"></div>
+  </div>
+</section>
+
+<section id="pitfalls">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">BEFORE YOU APPLY</p>
+      <h2>点を取っても、出願できないことがある。</h2>
+      <p>スコアそのものより、提出方法でつまずく人が毎年います。クリックでチェックを付けられます。要件は大学・年度で変わるため、必ず最新の募集要項を確認してください。</p>
+    </div>
+    <div class="check" id="checklist"></div>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">YOUR RECORD</p>
+      <h2>学習レコード</h2>
+      <p>このページを開いている間の正答数です。ページを閉じるとリセットされます。</p>
+    </div>
+    <div class="record">
+      <div class="rec"><p class="en">READING</p><p class="num" id="recR">0<small> / 0</small></p><p class="lbl">正解数／解答数</p></div>
+      <div class="rec"><p class="en">LISTENING</p><p class="num" id="recL">0<small> / 0</small></p><p class="lbl">正解数／解答数</p></div>
+      <div class="rec"><p class="en">VOCABULARY</p><p class="num" id="recV">0<small> / 0</small></p><p class="lbl">正解数／解答数</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flex">
+      <div style="max-width:30em">
+        <p class="logo" style="color:#fff;font-family:var(--serif);letter-spacing:.16em;margin:0">RE<i>:</i>SOPHIA</p>
+        <p style="margin:12px 0 0;line-height:1.95">帰国子女枠（帰国生入試）で大学を受ける人のためのTOEFL演習ページです。運営しているのは、同じ入試を通って上智大学に在学している帰国生です。本文・設問・解説・語彙はすべてこのサイトのオリジナルです。</p>
+        <p style="margin:12px 0 0;line-height:1.95;color:#6E7784">本サイトは学生有志による非公式のページで、上智大学および各大学の公式なものではありません。</p>
+      </div>
+      <ul>
+        <li><a href="#gap">つまずき</a></li>
+        <li><a href="#practice">演習</a></li>
+        <li><a href="#planner">出願逆算</a></li>
+        <li><a href="#pitfalls">提出の落とし穴</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://www.icu.ac.jp/admissions/undergraduate/exam/returnees/" target="_blank" rel="noopener">ICU 帰国生選抜</a></li>
+        <li><a href="https://adm.sophia.ac.jp/jpn/gakubu_tokubetsu_ad/kikoku/" target="_blank" rel="noopener">上智 海外就学経験者入試</a></li>
+        <li><a href="https://www.waseda.jp/inst/admission/" target="_blank" rel="noopener">早稲田 入学試験要項</a></li>
+      </ul>
+    </div>
+    <p class="copy">TOEFL は ETS の登録商標です。本ページは学習用のサンプルであり、ETS および各大学とは一切関係がありません。出願要件・必要スコア・日程は大学および年度によって異なります。記載の目安は参考であり、出願前に必ず各大学の最新の募集要項をご確認ください。</p>
+  </div>
+</footer>
+
+<div class="pop" id="pop" hidden></div>
+
+<script>
+/* ===== READING ===== */
+const READING=[
+{id:"r1",title:"The Spread of Papermaking",ja:"製紙法の伝播",tag:"歴史・技術 / 約350語",
+ paras:[
+ "Before paper became widely available, the surfaces on which people wrote were either fragile, heavy, or extremely expensive. Mesopotamian scribes pressed signs into clay tablets that were durable but cumbersome to store and transport. Egyptian papyrus was lighter, yet it grew brittle in damp climates and could be produced only where the papyrus reed grew. In Europe, the standard material was parchment, prepared from animal skin. A single large volume could require the skins of more than a hundred animals, which meant that books remained the property of monasteries, courts, and a handful of wealthy families.",
+ "Paper offered a way out of this bottleneck. The process, developed in China and refined by the second century CE, involved beating plant material such as hemp, bark, or old rags into a pulp, suspending the fibers in water, and lifting them out on a screen so that they dried into a thin sheet. Because the raw materials were essentially waste, paper could be made almost anywhere and in quantity.",
+ "Its movement westward was nevertheless slow. By tradition, the craft reached Central Asia after a military defeat in 751, when captured artisans were said to have taught papermaking in Samarkand. Historians debate whether that particular episode occurred as described. What is not in dispute is that paper mills were operating in Baghdad before the end of the eighth century, and that from there the technique traveled along trade routes through Egypt and North Africa.",
+ "Europe adopted it last. Parchment producers had an established trade to protect, and some authorities distrusted the new material, regarding documents written on it as less permanent. Only in the thirteenth century did mills appear in Spain and Italy, where craftsmen at Fabriano introduced water-powered hammers, metal wire screens, and a gelatin coating that kept ink from spreading.",
+ "The consequences became visible two centuries later. When printing with movable type appeared in Europe, it depended on a supply of cheap, uniform sheets. A press could produce hundreds of impressions a day, but that capacity would have meant very little if every sheet still had to come from a herd of animals."],
+ qs:[
+ {ty:"語彙",t:"In paragraph 1, the word “cumbersome” is closest in meaning to",c:["inexpensive","difficult to handle","easily damaged","widely traded"],a:1,
+  e:"clay tablets は durable（丈夫）だが保管・輸送が大変、という対比。cumbersome は「かさばって扱いにくい」。",r:"会話では使わない語なので、文脈の対比構造（but / yet）から意味を絞る練習をしてください。"},
+ {ty:"事実情報",t:"According to paragraph 1, why did books remain limited to wealthy owners in Europe?",c:["Papyrus could not survive the European climate.","Few people outside monasteries could read.","Parchment for one book required a great many animal skins.","Clay tablets were too heavy to move between cities."],a:2,
+  e:"「the skins of more than a hundred animals」が根拠。papyrus の気候の話は別素材の説明で、本が高価だった理由ではありません。",r:"本文に出てきた情報でも、設問が聞いている因果関係とずれていれば不正解。「本文にあったから正しい」と判断する癖が一番危険です。"},
+ {ty:"推論",t:"Paragraph 3 suggests that the author regards the story of the artisans captured in 751 as",c:["the only possible explanation for the spread of paper","a detail whose accuracy matters less than the outcome that followed","a legend invented much later by European historians","evidence that papermaking was kept secret for centuries"],a:1,
+  e:"「Historians debate whether…」と留保し、「What is not in dispute is that…」で結果の事実を強調。逸話の真偽より結果を重視する立場です。",r:"筆者の距離感は by tradition / were said to / what is not in dispute といった表現に出ます。内容ではなく態度を示す語に線を引いてください。"},
+ {ty:"否定事実情報",t:"All of the following are mentioned in paragraph 4 as factors in Europe's late adoption of paper EXCEPT",c:["the commercial interests of parchment makers","doubts about the durability of the new material","a shortage of water power in southern Europe","—"],a:2,
+  e:"羊皮紙業者の利害と耐久性への不信は本文にあります。水力は Fabriano で「導入された」話で、不足していたとは書かれていません。",r:"EXCEPT 問題は消去法以外の解き方がありません。3つを本文で指差してから、残りを選んでください。"},
+ {ty:"段落の目的",t:"What is the main purpose of the last paragraph?",c:["To argue that movable type was invented earlier than usually believed","To show that cheap paper was a precondition for the impact of printing","To compare the speed of hand copying with that of the printing press","To explain how papermakers reacted to the arrival of printing"],a:1,
+  e:"印刷機の能力も、安価な紙の供給がなければ意味がなかった、という締め方です。",r:"最終段落は「だから何なのか」を述べる場所。段落単位で一言要約する習慣があれば落としません。"}]},
+
+{id:"r2",title:"Cities That Make Their Own Heat",ja:"都市が生む熱",tag:"環境科学 / 約340語",
+ paras:[
+ "On a still summer night, a thermometer in the center of a large city can read several degrees higher than one in the farmland just beyond its edge. The difference is not caused by the weather moving through the region; it is produced by the city itself. Researchers call the pattern an urban heat island, and its strongest signal appears not at midday but in the hours after sunset.",
+ "Three mechanisms account for most of the effect. First, the materials cities are built from — asphalt, brick, concrete — absorb solar energy during the day and release it slowly at night, while soil covered by vegetation stores far less. Second, replacing plants with pavement removes evaporation. A tree moves water from the ground into the air, and that change of state consumes energy that would otherwise raise the air temperature. Third, the geometry of streets lined with tall buildings traps the heat that surfaces radiate upward, reflecting it back and forth between walls instead of letting it escape to the sky.",
+ "Human activity adds to the total. Engines, industrial processes, and air conditioners all discharge heat into the street. Air conditioning is a particularly awkward case: the warmer the outdoor air becomes, the harder the units work, and the more heat they pump outside.",
+ "The costs fall unevenly. Higher nighttime temperatures raise electricity demand precisely when the grid is already strained, and they interfere with recovery from daytime heat, which is why heat waves are most dangerous in neighborhoods where nights stay warm. Warmth also speeds the chemical reactions that form ground-level ozone, so hot city air tends to be dirtier city air.",
+ "Remedies are well known and their limits equally so. Reflective roofing lowers surface temperatures but can increase heating demand in winter. Street trees cool effectively through shade and evaporation, yet in dry regions they require water the city may not be able to spare. The useful question is therefore not whether a measure cools a city, but what it costs the city over an entire year."],
+ qs:[
+ {ty:"事実情報",t:"According to the passage, the urban heat island effect is most pronounced",c:["at midday in summer","during the hours after sunset","when a storm system passes over the city","in the early morning before sunrise"],a:1,
+  e:"第1段落末「not at midday but in the hours after sunset」がそのまま根拠です。",r:"not A but B の構造は設問化されやすい箇所。読み飛ばすと A を選びます。"},
+ {ty:"修辞目的",t:"In paragraph 2, the author mentions a tree moving water into the air in order to",c:["explain how vegetation lowers air temperature through evaporation","show that trees need more water than most city soils hold","contrast the cooling of parks with the cooling of rivers","argue that cities should plant more trees than they currently do"],a:0,
+  e:"蒸発という状態変化にエネルギーが使われるため気温上昇が抑えられる、という仕組みの説明です。",r:"「なぜ筆者はこれに触れたか」を問う問題。正しい内容でも、その段落の役割でなければ不正解になります。"},
+ {ty:"語彙",t:"The word “discharge” in paragraph 3 is closest in meaning to",c:["absorb","measure","release","restrict"],a:2,
+  e:"直後に the more heat they pump outside と言い換えられています。discharge＝放出する。",r:"知っている語でも、TOEFLは学術的な用法で出します。日常の「退院」「除隊」の意味に引っ張られないこと。"},
+ {ty:"推論",t:"Why does the author describe air conditioning as “a particularly awkward case”?",c:["It consumes more electricity than any other urban device.","Its cooling effect indoors cannot be measured accurately.","It worsens the outdoor condition that increases demand for it.","It is unavailable in the neighborhoods that need it most."],a:2,
+  e:"外気温が上がるほど稼働が増え、その稼働がさらに外へ熱を出す、という自己増幅の関係を指しています。",r:"the 比較級, the 比較級 の構文が因果の循環を作っています。構文が読めれば根拠は一文で足ります。"},
+ {ty:"段落の目的",t:"Which of the following best expresses the point of the final paragraph?",c:["Reflective roofs are more effective than street trees in most cities.","Cooling measures must be judged by their year-round costs, not summer benefits alone.","Cities in dry regions should abandon tree planting entirely.","No current method reduces urban temperatures by a measurable amount."],a:1,
+  e:"冬の暖房需要や水の制約に触れ、「年間を通じて何を要するか」で判断すべきだと結論しています。",r:"言い過ぎの選択肢（entirely / No current method）は、たいてい本文より強い主張になっています。"}]}
+];
+
+/* ===== LISTENING ===== */
+const LISTENING=[
+{id:"l1",type:"CONVERSATION",title:"Campus Conversation",ja:"学生と図書館スタッフ",tag:"会話 / 約1分30秒",
+ script:[
+ {sp:"Student",v:0,t:"Excuse me, I'm trying to find an article for my geology paper, but the library catalog says the journal isn't in the collection."},
+ {sp:"Librarian",v:1,t:"Which journal is it?"},
+ {sp:"Student",v:0,t:"It's called Quaternary Sediment Review. The article is from nineteen eighty-eight."},
+ {sp:"Librarian",v:1,t:"Right. We cancelled that subscription years ago, and the older print volumes went to off-site storage. But that doesn't mean you can't get it. You can request it through interlibrary loan."},
+ {sp:"Student",v:0,t:"How long does that usually take? My paper is due a week from Friday."},
+ {sp:"Librarian",v:1,t:"For an article, it's normally two to four days, because the other library just scans it and sends a file. Books take longer, maybe a week."},
+ {sp:"Student",v:0,t:"Oh, that's fine, then. Do I need to pay for it?"},
+ {sp:"Librarian",v:1,t:"Not for articles. There's no charge for students as long as the request comes through your university account."},
+ {sp:"Student",v:0,t:"Great. And, um, one more thing. My professor said something about a citation database for geology. I wrote down the name but I can't read my own handwriting."},
+ {sp:"Librarian",v:1,t:"It's probably GeoRef. It indexes almost everything in the field back to the eighteen hundreds. The link is on the subject guide page, under Earth Sciences. Honestly, if you start there instead of the general catalog, you'll find related articles much faster, and most of them we do have full text for."},
+ {sp:"Student",v:0,t:"So I should have started with that."},
+ {sp:"Librarian",v:1,t:"Most people don't. Put in your loan request first, though, so the clock starts running."}],
+ qs:[
+ {ty:"主旨",t:"Why does the student go to the librarian?",c:["To renew a book that is overdue","To ask about an article the library does not hold","To complain about a cancelled subscription","To reserve a study room before a deadline"],a:1,
+  e:"冒頭で「カタログにその雑誌がない」と相談しています。",r:"会話の目的は最初の2〜3発話でほぼ決まります。ここを聞き逃すと全体が崩れます。"},
+ {ty:"詳細",t:"What does the librarian say about interlibrary loan for articles?",c:["It takes about a week and costs a small fee.","It is available only to graduate students.","It usually takes two to four days and is free for students.","It requires approval from the student's professor."],a:2,
+  e:"two to four days、no charge for students。1週間かかるのは本の場合です。",r:"数字と条件が2つ以上出たら、必ずどちらが何の話かをメモで区別してください。"},
+ {ty:"詳細",t:"What is GeoRef?",c:["A storage facility for older print volumes","A database that indexes geology literature","A course guide written by the geology department","A software tool for formatting citations"],a:1,
+  e:"「It indexes almost everything in the field」から地質学分野の文献データベースだと分かります。",r:"固有名詞は綴りを取ろうとせず、直後の説明だけ拾えば十分です。"},
+ {ty:"話者の意図",t:"What does the librarian imply when she says, “Most people don't”?",c:["The student's mistake is a common one.","The database is rarely useful for undergraduates.","Few students finish their papers on time.","The subject guide page is difficult to find."],a:0,
+  e:"「最初からそれを使うべきだった」に対し「たいていの人はしない」＝よくあることだ、と和らげています。",r:"帰国生がいちばん落とすタイプ。語の意味ではなく、その場で何をしている発話か（慰める・訂正する・促す）で判断します。"},
+ {ty:"次の行動",t:"What does the librarian advise the student to do first?",c:["Search GeoRef before anything else","Submit the interlibrary loan request","Visit the off-site storage facility","Ask the professor for the exact title"],a:1,
+  e:"最後に「Put in your loan request first, though, so the clock starts running」と促しています。",r:"最後の though / anyway / but first の後ろに結論が来ます。終盤で気を抜かないこと。"}]},
+
+{id:"l2",type:"LECTURE",title:"Biology: How Honeybees Share Directions",ja:"講義：ミツバチの情報伝達",tag:"講義 / 約1分40秒",
+ script:[
+ {sp:"Professor",v:1,t:"So last week we ended with a question: how does an insect with a brain the size of a sesame seed tell other insects where to find food that is two kilometers away?"},
+ {sp:"Professor",v:1,t:"When a honeybee returns to the hive after finding a good patch of flowers, she performs a movement on the vertical surface of the comb. If the food is close by, she runs in tight circles. If it is farther away, she does something much more informative. She walks in a straight line, waggling her abdomen, then loops back and repeats it. Von Frisch called this the waggle dance."},
+ {sp:"Professor",v:1,t:"Two pieces of information are encoded in it. The direction of the straight run, measured against vertical, corresponds to the angle between the sun and the food source. Straight up means fly toward the sun. Sixty degrees to the left of vertical means sixty degrees to the left of the sun."},
+ {sp:"Professor",v:1,t:"The second piece is distance, and it is carried by the duration of the waggling run. A longer run means a longer flight. Notice what this requires. The comb is dark. The bees crowded around the dancer cannot see her. They are reading the vibration and the air movement, and in some cases touching her directly."},
+ {sp:"Professor",v:1,t:"Now, there is a complication that students usually miss. The sun moves across the sky during the day. A dancer who has been inside the hive for thirty minutes adjusts the angle of her run to account for how far the sun has traveled in the meantime. She is, in effect, correcting for time."},
+ {sp:"Professor",v:1,t:"For decades some researchers argued the dance was a curiosity and that the recruits were actually following the odor of flowers on the dancer's body. That objection was not settled until the nineteen nineties, when a group built a mechanical bee that could perform the dance without carrying any scent. Recruits flew to the location the robot indicated. The dance carries the information."}],
+ qs:[
+ {ty:"主旨",t:"What is the lecture mainly about?",c:["Why honeybees prefer flowers close to the hive","How honeybees communicate the location of food","How the structure of a honeycomb affects bee behavior","Why the size of an insect brain limits its behavior"],a:1,
+  e:"冒頭の問い「どうやって2km先の餌場を伝えるのか」が全体のテーマです。",r:"講義の主旨は冒頭の問いかけで提示されることが多く、そこを取れば主旨問題は確実に拾えます。"},
+ {ty:"詳細",t:"According to the professor, what does the direction of the straight run indicate?",c:["The quality of the nectar at the source","The angle of the food source relative to the sun","The number of bees needed to collect the food","The height at which the flowers are growing"],a:1,
+  e:"垂直を基準にした直進部分の角度が、太陽と餌場のなす角度に対応します。",r:"「2つの情報がある」と予告されたら、1と2を必ず分けて書き取ってください。"},
+ {ty:"詳細",t:"How is distance to the food source conveyed?",c:["By how loudly the dancer vibrates","By how long the waggling run lasts","By how many bees join the dance","By how often the dance is repeated in an hour"],a:1,
+  e:"distance は the duration of the waggling run で伝えられます。",r:"方向＝角度、距離＝時間。対応関係を図でメモできれば2問とも落としません。"},
+ {ty:"構成・目的",t:"Why does the professor point out that the comb is dark?",c:["To explain why bees dance only at night","To show that the audience must detect the dance without seeing it","To suggest that the dance evolved from a nighttime behavior","To explain why von Frisch needed artificial lighting"],a:1,
+  e:"暗闇では見えないため、周りのハチは振動・空気の動き・接触で受け取っている、という点を導く指摘です。",r:"Notice what this requires のような前置きは、直後が設問になる合図です。"},
+ {ty:"詳細",t:"What did the experiment with the mechanical bee demonstrate?",c:["That bees can be trained to follow artificial scents","That the dance itself conveys the location, without odor cues","That robots recruit bees more efficiently than real dancers","That von Frisch's measurements of angle were inaccurate"],a:1,
+  e:"匂いを持たない機械のハチでも新兵バチが指示先へ飛んだ＝踊り自体が情報を運ぶ証拠です。",r:"反論とその決着はセットで問われます。誰が何に反対したかをメモしておくこと。"}]}
+];
+
+/* ===== VOCAB (英英定義つき) ===== */
+const VOCAB=[
+{w:"advocate",p:"v. / n.",d:"to publicly support a particular policy or course of action",m:"を主張する／擁護者",lv:"会話でも使う",ex:"Several economists advocate a gradual reduction in tariffs.",ja:"複数の経済学者が関税の段階的な引き下げを主張している。",t:"日常では「弁護士」的な名詞で覚えている人が多いが、本文では動詞で出る。"},
+{w:"attribute",p:"v. / n.",d:"to say that something was caused by a particular person or thing",m:"を〜のせいだとする／特性",lv:"会話でも使う",ex:"Historians attribute the decline to a series of poor harvests.",ja:"歴史家はその衰退を度重なる不作のせいだとしている。",t:"動詞は attribute A to B。名詞は強勢の位置が変わる（ÁT-tri-bute）。"},
+{w:"comprise",p:"v.",d:"to consist of or be made up of",m:"から成る",lv:"会話でも使う",ex:"The committee comprises twelve members from six departments.",ja:"その委員会は6学部の12名で構成される。",t:"is comprised of は避けられがち。読解では「全体 comprises 部分」の向きを押さえる。"},
+{w:"deteriorate",p:"v.",d:"to become worse in quality or condition",m:"悪化する",lv:"会話でも使う",ex:"Air quality deteriorated sharply during the drought.",ja:"干ばつの間、大気の質は急激に悪化した。",t:""},
+{w:"diminish",p:"v.",d:"to become or make smaller in size, importance, or effect",m:"減少する",lv:"会話でも使う",ex:"The effect diminishes as the distance from the source increases.",ja:"発生源から離れるほど効果は小さくなる。",t:""},
+{w:"hypothesis",p:"n.",d:"an idea proposed as a starting point for investigation, not yet proven",m:"仮説",lv:"会話でも使う",ex:"The hypothesis was tested in three separate experiments.",ja:"その仮説は3つの独立した実験で検証された。",t:"複数形は hypotheses。Writingで単複を間違えやすい。"},
+{w:"prominent",p:"adj.",d:"easily noticed, or well known and important",m:"目立つ／著名な",lv:"会話でも使う",ex:"Erosion left a prominent ridge along the coastline.",ja:"浸食で海岸線に目立つ尾根が残された。",t:"「有名な」と「物理的に突き出た」の両方で出る。"},
+{w:"sustain",p:"v.",d:"to keep something going over time, or to provide what is needed for it to continue",m:"を維持する・支える",lv:"会話でも使う",ex:"The soil could not sustain crops for more than two seasons.",ja:"その土壌では作物を2作以上維持できなかった。",t:"sustain an injury（負傷する）の用法も読解で出る。"},
+{w:"abundant",p:"adj.",d:"present in large quantities; more than enough",m:"豊富な",lv:"会話でも使う",ex:"Iron was abundant in the region and easy to extract.",ja:"その地域では鉄が豊富で採取も容易だった。",t:""},
+{w:"emerge",p:"v.",d:"to appear or become known, especially gradually",m:"現れる・明らかになる",lv:"会話でも使う",ex:"A clear pattern emerged only after the tenth trial.",ja:"明確な傾向が現れたのは10回目の試行の後だった。",t:""},
+{w:"vary",p:"v.",d:"to be different from one case to another, or to change over time",m:"異なる・変動する",lv:"会話でも使う",ex:"Rainfall varies considerably from one valley to the next.",ja:"降水量は谷ごとにかなり異なる。",t:"名詞 variation、形容詞 various との使い分けをWritingで問われる。"},
+{w:"constitute",p:"v.",d:"to form or make up a whole; to amount to",m:"を構成する・〜に相当する",lv:"会話でも使う",ex:"Wetlands constitute less than three percent of the land area.",ja:"湿地は陸地面積の3％未満を占めるにすぎない。",t:"comprise と向きが逆。「部分 constitute 全体」。"},
+
+{w:"arbitrary",p:"adj.",d:"decided by personal choice rather than by rule or reason",m:"恣意的な・根拠のない",lv:"論文でよく出る",ex:"The boundary was arbitrary, drawn without regard to language or terrain.",ja:"その境界線は恣意的で、言語や地形を無視して引かれた。",t:"「ランダム」ではなく「決め方に根拠がない」。ここを混同すると推論問題を外す。"},
+{w:"coherent",p:"adj.",d:"fitting together in a way that makes sense as a whole",m:"筋の通った",lv:"論文でよく出る",ex:"The fragments do not yet form a coherent account of the settlement.",ja:"それらの断片はまだ一貫した説明になっていない。",t:"Writingの採点語でもある。自分の答案を評価する語として覚える。"},
+{w:"compelling",p:"adj.",d:"so strong or convincing that it is difficult to argue against",m:"説得力のある",lv:"論文でよく出る",ex:"There is compelling evidence that the lake once covered the entire basin.",ja:"かつて湖が盆地全体を覆っていたという説得力ある証拠がある。",t:"「面白い」ではない。evidence / argument と結びつく。"},
+{w:"discrepancy",p:"n.",d:"a difference between two things that should agree",m:"食い違い",lv:"論文でよく出る",ex:"A discrepancy between the two datasets pointed to a calibration error.",ja:"2つのデータの食い違いは較正の誤りを示していた。",t:""},
+{w:"implicit",p:"adj.",d:"suggested without being directly stated",m:"暗黙の",lv:"論文でよく出る",ex:"The argument rests on an implicit assumption about population growth.",ja:"その議論は人口増加についての暗黙の前提に基づく。",t:"推論問題の設問文そのものに出る語。explicit との対で覚える。"},
+{w:"inherent",p:"adj.",d:"existing as a natural and permanent part of something",m:"本来備わっている",lv:"論文でよく出る",ex:"There are limits inherent in any method based on tree rings.",ja:"年輪に基づく手法には本来的な限界がある。",t:""},
+{w:"mitigate",p:"v.",d:"to make something bad less severe",m:"を和らげる",lv:"論文でよく出る",ex:"Planting trees along the street mitigates the afternoon heat.",ja:"街路樹を植えると午後の暑さが和らぐ。",t:"環境・政策系の本文で頻出。解決しきる（solve）とは違う。"},
+{w:"plausible",p:"adj.",d:"seeming reasonable or possible, though not proven",m:"もっともらしい",lv:"論文でよく出る",ex:"Both explanations are plausible, but only one fits the dating evidence.",ja:"どちらの説明もありうるが、年代の証拠に合うのは一方だけだ。",t:"「正しい」ではない。断定していない点が設問化される。"},
+{w:"preliminary",p:"adj.",d:"coming before the main part; not final",m:"予備的な・暫定の",lv:"論文でよく出る",ex:"These are preliminary findings and may be revised.",ja:"これらは暫定的な知見であり、修正されうる。",t:""},
+{w:"subsequent",p:"adj.",d:"coming after something else in time",m:"その後の",lv:"論文でよく出る",ex:"Subsequent excavations uncovered a second wall.",ja:"その後の発掘で2つ目の壁が見つかった。",t:"時系列問題で順序の手がかりになる語。"},
+{w:"undermine",p:"v.",d:"to weaken something, often gradually or indirectly",m:"を弱める・損なう",lv:"論文でよく出る",ex:"The new dates undermine the traditional chronology.",ja:"新しい年代測定は従来の年代区分を揺るがす。",t:"support の反対として本文の論争構造を作る。"},
+{w:"viable",p:"adj.",d:"able to work successfully or to survive",m:"実行可能な",lv:"論文でよく出る",ex:"Wind power became viable once storage costs fell.",ja:"蓄電コストが下がって初めて風力は現実的になった。",t:""},
+{w:"anomaly",p:"n.",d:"something that differs from what is normal or expected",m:"例外・異常値",lv:"ここで差がつく",ex:"The temperature anomaly persisted for three consecutive decades.",ja:"その気温の異常は30年続いた。",t:""},
+
+{w:"contentious",p:"adj.",d:"likely to cause disagreement between people",m:"議論を呼ぶ",lv:"ここで差がつく",ex:"Dating the earliest layer remains contentious among archaeologists.",ja:"最古層の年代は考古学者の間でいまだ議論が分かれる。",t:"筆者が「決着していない」と示す合図。断定的な選択肢を切る根拠になる。"},
+{w:"corroborate",p:"v.",d:"to provide evidence that supports a statement or finding",m:"を裏づける",lv:"ここで差がつく",ex:"Ice-core data corroborate the account found in written records.",ja:"氷床コアのデータが文献の記述を裏づけている。",t:""},
+{w:"impede",p:"v.",d:"to slow down or block the progress of something",m:"を妨げる",lv:"ここで差がつく",ex:"Dense sediment impeded the flow of groundwater.",ja:"密度の高い堆積物が地下水の流れを妨げた。",t:"prevent（完全に止める）より弱い。程度の差が設問になる。"},
+{w:"nominal",p:"adj.",d:"existing in name only, or very small in amount",m:"名目上の・ごくわずかの",lv:"ここで差がつく",ex:"He held nominal authority, but decisions were made elsewhere.",ja:"彼の権限は名目上のもので、決定は別の場所でなされていた。",t:"「名前の」ではない。歴史・政治系の本文で人物の実権を判断する鍵になる。"},
+{w:"precipitate",p:"v.",d:"to cause something, especially something bad, to happen suddenly",m:"を引き起こす",lv:"ここで差がつく",ex:"The harvest failure precipitated a wave of migration.",ja:"不作が移住の波を引き起こした。",t:"名詞 precipitation（降水）と同語源だが意味が別。化学の「沈殿」でも出る。"},
+{w:"proliferate",p:"v.",d:"to increase rapidly in number and spread widely",m:"急増する",lv:"ここで差がつく",ex:"Small workshops proliferated once the material became cheap.",ja:"材料が安くなると小規模な工房が急増した。",t:""},
+{w:"redundant",p:"adj.",d:"more than is needed; repeated unnecessarily",m:"余分な・重複した",lv:"ここで差がつく",ex:"The second sensor is redundant but improves reliability.",ja:"2つ目のセンサーは冗長だが信頼性を高める。",t:"英では「解雇された」の意味もある。学術文では「冗長」。"},
+{w:"reconcile",p:"v.",d:"to make two different facts or ideas fit together without contradiction",m:"を整合させる",lv:"ここで差がつく",ex:"It is difficult to reconcile the fossil record with the genetic estimates.",ja:"化石の記録と遺伝学的推定を整合させるのは難しい。",t:"人間関係の「仲直り」で覚えていると、学術文で読み違える。"},
+{w:"scrutiny",p:"n.",d:"careful and critical examination",m:"精査",lv:"ここで差がつく",ex:"The claim did not survive close scrutiny.",ja:"その主張は精査に耐えられなかった。",t:""},
+{w:"tenuous",p:"adj.",d:"weak, uncertain, or supported by very little evidence",m:"根拠の薄い",lv:"ここで差がつく",ex:"The link between the two events is tenuous at best.",ja:"2つの出来事の関連は、よく見てもごく薄い。",t:"at best と組むと強い否定的評価になる。"},
+{w:"ubiquitous",p:"adj.",d:"found everywhere; present in all places at once",m:"どこにでもある",lv:"ここで差がつく",ex:"Plastic fragments are now ubiquitous in ocean sediment.",ja:"プラスチックの破片は今や海底堆積物のどこにでも見られる。",t:""},
+{w:"salient",p:"adj.",d:"most noticeable or most important among many things",m:"最も重要な・際立った",lv:"ここで差がつく",ex:"The salient feature of the design is its unusually thin walls.",ja:"その設計で際立つのは異例の薄い壁だ。",t:"要約問題の設問文でよく使われる語。"}
+];
+
+/* ===== 例文に出る周辺語の辞書 ===== */
+const SUB={
+economist:["n.","a person who studies how money, trade, and production work","経済学者"],
+tariff:["n.","a tax that a government charges on goods coming into a country","関税"],
+gradual:["adj.","happening slowly over a period of time","段階的な"],
+reduction:["n.","the act of making something smaller or less","削減・引き下げ"],
+historian:["n.","a person who studies and writes about the past","歴史家"],
+decline:["n. / v.","a fall in amount, power, or quality","衰退・減少"],
+harvest:["n. / v.","the gathering of crops, or the crops gathered","収穫（高）"],
+committee:["n.","a small group chosen to make decisions for a larger group","委員会"],
+department:["n.","one section of a university, company, or government","学部・部門"],
+drought:["n.","a long period with little or no rain","干ばつ"],
+trial:["n.","a test done to find out whether something works","試行・実験"],
+pattern:["n.","a regular way in which something happens or is arranged","傾向・規則性"],
+erosion:["n.","the gradual wearing away of land by water or wind","浸食"],
+ridge:["n.","a long narrow raised part of a surface, such as a line of hills","尾根"],
+coastline:["n.","the outline of a coast as seen from above","海岸線"],
+soil:["n.","the top layer of earth in which plants grow","土壌"],
+crop:["n.","a plant grown in large amounts for food","作物"],
+extract:["v.","to remove or take out, especially with effort","を採取する・抽出する"],
+rainfall:["n.","the amount of rain that falls in a place over a period","降水量"],
+valley:["n.","low land between hills or mountains","谷"],
+considerably:["adv.","by a large amount","かなり"],
+wetland:["n.","land that is covered by shallow water or is very wet","湿地"],
+boundary:["n.","a line that marks the edge of an area","境界"],
+terrain:["n.","the physical features of an area of land","地形"],
+fragment:["n.","a small piece broken off a whole","断片"],
+settlement:["n.","a place where people have come to live, often a small early community","集落"],
+evidence:["n.","facts that support or disprove a claim","証拠"],
+basin:["n.","a large area of land that drains toward one river or lake","盆地・流域"],
+dataset:["n.","a set of related measurements treated as one unit","データセット"],
+calibration:["n.","the adjusting of an instrument so that its readings are correct","較正・調整"],
+assumption:["n.","something accepted as true without proof","前提・仮定"],
+excavation:["n.","the digging of the ground to find buried remains","発掘"],
+uncover:["v.","to find something that was hidden or buried","を発見する"],
+chronology:["n.","the order in which events happened, or a system of dating them","年代の順序・年表"],
+storage:["n.","the keeping of something until it is needed","貯蔵・蓄電"],
+consecutive:["adj.","following one after another without a break","連続した"],
+decade:["n.","a period of ten years","10年間"],
+archaeologist:["n.","a person who studies the past through remains and buried sites","考古学者"],
+layer:["n.","one thickness of material lying over or under another","層"],
+core:["n.","a long cylinder of material drilled out of ice, rock, or soil for study","（採取した）コア・中心部"],
+sediment:["n.","material such as sand or mud that settles at the bottom of water","堆積物"],
+dense:["adj.","packed closely together; thick","密度の高い"],
+groundwater:["n.","water held underground in soil and rock","地下水"],
+authority:["n.","the power to make decisions, or a person or body holding it","権限・当局"],
+migration:["n.","the movement of people or animals from one place to another","移住・移動"],
+workshop:["n.","a small place where things are made or repaired by hand","工房"],
+sensor:["n.","a device that detects a physical condition such as heat or motion","センサー"],
+reliability:["n.","the quality of working correctly and consistently","信頼性"],
+fossil:["n.","the preserved remains or trace of an ancient living thing","化石"],
+genetic:["adj.","relating to genes and inherited characteristics","遺伝の・遺伝学的な"],
+estimate:["n. / v.","an approximate judgment of a value, or to make one","推定（する）"],
+claim:["n. / v.","a statement that something is true, often without full proof","主張（する）"],
+survive:["v.","to continue to exist, especially after difficulty or testing","生き残る・耐える"],
+ring:["n.","one of the circles in a tree trunk, each marking a year of growth","年輪"],
+vertical:["adj.","pointing straight up and down","垂直の"],
+abdomen:["n.","the rear section of an insect's body","腹部"]
+};
+const STOP=new Set(("a an the of to in on at for and or but is are was were be been being it its this that these those as by "+
+"with from into than then so such not no if when while which who whom whose there their they them he she his her him you your we our us i "+
+"do does did have has had can could will would may might must more most other than about over under up down out only just also very").split(" "));
+
+function normList(w){
+  const c=[w];
+  if(w.length>3&&w.endsWith("ies")) c.push(w.slice(0,-3)+"y");
+  if(w.length>3&&w.endsWith("es")) c.push(w.slice(0,-2));
+  if(w.length>3&&w.endsWith("s")) c.push(w.slice(0,-1));
+  if(w.length>3&&w.endsWith("ed")) c.push(w.slice(0,-2),w.slice(0,-1));
+  if(w.length>4&&w.endsWith("ing")) c.push(w.slice(0,-3),w.slice(0,-3)+"e");
+  if(w.length>4&&w.endsWith("ally")) c.push(w.slice(0,-4));
+  if(w.length>3&&w.endsWith("ly")) c.push(w.slice(0,-2));
+  return c;
+}
+function lookup(word){
+  for(const c of normList(word)){
+    const i=VOCAB.findIndex(v=>v.w===c);
+    if(i>=0) return {kind:"vocab",i:i,w:VOCAB[i].w};
+    if(SUB[c]) return {kind:"sub",w:c,e:SUB[c]};
+  }
+  return null;
+}
+function linkify(text){
+  return String(text).split(/([A-Za-z][A-Za-z'’-]*)/).map((part,i)=>{
+    if(i%2===0) return esc(part);
+    const low=part.toLowerCase().replace(/[’']s$/,"");
+    if(STOP.has(low)||low.length<3) return esc(part);
+    const hit=lookup(low);
+    return '<span class="tk'+(hit?" hit":"")+'" data-w="'+esc(low)+'">'+esc(part)+'</span>';
+  }).join("");
+}
+function hidePop(){$("#pop").hidden=true;}
+function showPop(el,word){
+  const hit=lookup(word), pop=$("#pop");
+  const dictA='<a href="https://dictionary.cambridge.org/dictionary/english/'+encodeURIComponent(word)+'" target="_blank" rel="noopener">英英辞典で引く</a>'+
+              '<a href="https://ejje.weblio.jp/content/'+encodeURIComponent(word)+'" target="_blank" rel="noopener">和訳を引く</a>';
+  let body;
+  if(hit&&hit.kind==="vocab"){
+    const v=VOCAB[hit.i];
+    body='<p class="pw">'+esc(v.w)+'</p><p class="pp">'+esc(v.p)+' ・ このサイトの収録語</p>'+
+      '<p class="pd">'+esc(v.d)+'</p><p class="pm">'+esc(v.m)+'</p>'+
+      '<div class="pact"><button class="go" data-jump="'+esc(v.w)+'">このカードへ移動</button>'+dictA+'</div>';
+  }else if(hit&&hit.kind==="sub"){
+    const e=hit.e;
+    body='<p class="pw">'+esc(hit.w)+'</p><p class="pp">'+esc(e[0])+' ・ 例文の周辺語</p>'+
+      '<p class="pd">'+esc(e[1])+'</p><p class="pm">'+esc(e[2])+'</p><div class="pact">'+dictA+'</div>';
+  }else{
+    body='<p class="pw">'+esc(word)+'</p><p class="pp">このサイトには項目がありません</p>'+
+      '<p class="px">収録していない語です。外部の辞書で確認して、知らなければ自分の単語帳に足してください。</p><div class="pact">'+dictA+'</div>';
+  }
+  pop.innerHTML='<button class="close" aria-label="閉じる">×</button>'+body;
+  pop.hidden=false;
+  const r=el.getBoundingClientRect(), pw=pop.offsetWidth;
+  let left=r.left+window.scrollX+r.width/2-pw/2;
+  left=Math.max(16,Math.min(left,document.documentElement.clientWidth-pw-16));
+  pop.style.left=left+"px";
+  pop.style.top=(r.bottom+window.scrollY+10)+"px";
+  $(".close",pop).addEventListener("click",hidePop);
+  const jump=$("[data-jump]",pop);
+  if(jump) jump.addEventListener("click",()=>{hidePop();jumpToWord(jump.dataset.jump);});
+}
+function jumpToWord(w){
+  const cur=S.vList[S.vPos];
+  if(cur&&cur.w!==w) S.vHistory.push(cur.w);
+  S.vLevel="すべて"; S.vMode="card"; vFilter();
+  const i=S.vList.findIndex(v=>v.w===w);
+  S.vPos=i>=0?i:0; S.vFlipped=true;
+  renderVocab();
+  switchTab("vocab");
+  const m=$("#vMain"); if(m) m.scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.addEventListener("click",e=>{
+  const tk=e.target.closest(".tk");
+  if(tk){e.stopPropagation();showPop(tk,tk.dataset.w);return;}
+  if(!e.target.closest("#pop")) hidePop();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape") hidePop();});
+window.addEventListener("resize",hidePop);
+
+/* ===== CHECKLIST ===== */
+const CHECKS=[
+ {h:"スコアの送付方法を確認したか",p:"大学によっては、ETSから大学へ直送されたオフィシャルスコアでしか受け付けません。手元のPDFや受験者用コピーでは不可の場合があります。直送の手配をしていなかったために出願が受理されない例は毎年あります。"},
+ {h:"直送が締切までに届く日程か",p:"申し込んでから大学に届くまで数週間かかることがあります。締切「までに到着」が条件なら、受験日ではなく到着日から逆算してください。"},
+ {h:"受験した試験の種類が認められているか",p:"団体受験（ITP）や自宅受験版は不可としている大学があります。出願に使えるのはどの形式かを、募集要項の該当ページで確認してください。"},
+ {h:"スコアの有効期限内か",p:"出願時点で有効な期間（多くは2年程度）が定められています。高1で取った高得点が、出願時には使えないことがあります。"},
+ {h:"MyBest Scoresが使えるか",p:"複数回のベストを組み合わせたスコアを認めるかは大学によります。認められない場合、1回の受験で全セクションを揃える必要があります。"},
+ {h:"英語以外の提出物の準備が動いているか",p:"帰国生入試では成績証明書、在留期間の証明、推薦状、志望理由書などが必要です。学校側の発行に時間がかかるものから先に依頼してください。"},
+ {h:"日本語で書く・話す準備をしているか",p:"小論文や日本語面接を課す大学があります。英語で考えた内容を日本語の型に落とす練習は、TOEFLとは別枠で時間を取ってください。"},
+ {h:"帰国生としての出願資格を満たしているか",p:"海外在住年数や在籍校の種別など、資格要件は大学ごとに異なります。スコアより先に、そもそも出願できるかを確認してください。"}
+];
+
+/* ===== STATE & HELPERS ===== */
+const S={rIdx:0,lIdx:0,rAns:{},lAns:{},rec:{r:[0,0],l:[0,0],v:[0,0]},
+ vMode:"card",vLevel:"すべて",vList:[],vPos:0,vFlipped:false,vLog:[],vHistory:[],rate:1,target:90};
+const $=(s,el)=>(el||document).querySelector(s);
+const $$=(s,el)=>[...(el||document).querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+$("#menuBtn").addEventListener("click",e=>{
+  const open=$("#nav").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded",open);
+});
+$$("[data-goto]").forEach(b=>b.addEventListener("click",()=>{
+  const g=b.dataset.goto;
+  $("#nav").classList.remove("open");
+  if(g==="plan"){$("#planner").scrollIntoView({behavior:"smooth"});return;}
+  switchTab(g);
+  $("#practice").scrollIntoView({behavior:"smooth"});
+}));
+function switchTab(name){
+  $$(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.pane===name));
+  $$(".pane").forEach(p=>p.classList.toggle("on",p.id==="pane-"+name));
+  if(name!=="listening") stopAudio();
+}
+$$(".tab").forEach(t=>t.addEventListener("click",()=>switchTab(t.dataset.pane)));
+
+function questionHTML(kind,q,qi){
+  const choices=q.c.filter(c=>c!=="—");
+  return '<div class="q">'+
+   '<div class="qhead"><p class="qn">QUESTION '+(qi+1)+'</p><span class="qtype">'+esc(q.ty)+'</span></div>'+
+   '<p class="qt">'+esc(q.t)+'</p>'+
+   choices.map((c,ci)=>'<label class="opt" data-q="'+qi+'" data-c="'+ci+'"><input type="radio" name="'+kind+'q'+qi+'" value="'+ci+'">'+esc(c)+'</label>').join("")+
+   '<div class="exp" id="'+kind+'e'+qi+'"></div></div>';
+}
+function bindOptions(kind){
+  const store=kind==="r"?S.rAns:S.lAns;
+  $$("#"+(kind==="r"?"rQuestions":"lQuestions")+" .opt").forEach(o=>{
+    o.addEventListener("click",()=>{
+      const qi=o.dataset.q;
+      $$('.opt[data-q="'+qi+'"]',o.closest(".q")).forEach(x=>x.classList.remove("sel"));
+      o.classList.add("sel"); store[qi]=+o.dataset.c;
+    });
+  });
+}
+function grade(kind){
+  const set=kind==="r"?READING[S.rIdx]:LISTENING[S.lIdx];
+  const store=kind==="r"?S.rAns:S.lAns;
+  const root=kind==="r"?"#rQuestions":"#lQuestions";
+  let correct=0;
+  set.qs.forEach((q,qi)=>{
+    const picked=store[qi];
+    $$('.opt[data-q="'+qi+'"]',$(root)).forEach(o=>{
+      const ci=+o.dataset.c;
+      if(ci===q.a) o.classList.add("correct");
+      else if(ci===picked) o.classList.add("wrong");
+    });
+    const ok=picked===q.a; if(ok) correct++;
+    const box=$("#"+kind+"e"+qi);
+    box.innerHTML='<span class="verdict '+(ok?"ok":"ng")+'">'+(ok?"正解":(picked===undefined?"未解答":"不正解"))+'</span>'+
+      '<b>正答：'+String.fromCharCode(65+q.a)+'</b>　'+esc(q.e)+
+      (q.r?'<span class="note-r">帰国生へ：'+esc(q.r)+'</span>':'');
+    box.classList.add("on");
+  });
+  const total=set.qs.length;
+  if(kind==="r"){S.rec.r[0]+=correct;S.rec.r[1]+=total;}else{S.rec.l[0]+=correct;S.rec.l[1]+=total;}
+  $("#"+kind+"Score").innerHTML='<strong>'+correct+'</strong> / '+total+' 問正解';
+  $("#"+kind+"Grade").disabled=true;
+  updateRecord();
+  if(kind==="l") $("#lScript").classList.add("on");
+}
+
+/* Reading */
+function renderReading(){
+  const p=READING[S.rIdx];
+  $("#rPicker").innerHTML=READING.map((x,i)=>'<button class="chip" aria-pressed="'+(i===S.rIdx)+'" data-i="'+i+'">'+esc(x.ja)+'｜'+esc(x.title)+'</button>').join("");
+  $$("#rPicker .chip").forEach(c=>c.addEventListener("click",()=>{S.rIdx=+c.dataset.i;S.rAns={};renderReading();}));
+  $("#rPassage").innerHTML='<h3>'+esc(p.title)+'</h3><p class="meta">'+esc(p.tag)+'</p>'+p.paras.map(t=>"<p>"+esc(t)+"</p>").join("");
+  $("#rQuestions").innerHTML=p.qs.map((q,i)=>questionHTML("r",q,i)).join("");
+  bindOptions("r"); $("#rScore").textContent=""; $("#rGrade").disabled=false;
+}
+$("#rGrade").addEventListener("click",()=>grade("r"));
+$("#rReset").addEventListener("click",()=>{S.rAns={};renderReading();});
+
+/* Listening */
+function renderListening(){
+  const it=LISTENING[S.lIdx];
+  $("#lPicker").innerHTML=LISTENING.map((x,i)=>'<button class="chip" aria-pressed="'+(i===S.lIdx)+'" data-i="'+i+'">'+esc(x.ja)+'</button>').join("");
+  $$("#lPicker .chip").forEach(c=>c.addEventListener("click",()=>{stopAudio();S.lIdx=+c.dataset.i;S.lAns={};renderListening();}));
+  $("#lPlayer").innerHTML='<p class="ptitle">'+esc(it.title)+'</p><p class="pmeta">'+esc(it.type)+' ・ '+esc(it.tag)+'</p>'+
+   '<div class="pcontrols"><button class="play" id="playBtn">音声を再生</button><button class="pbtn" id="stopBtn">停止</button>'+
+   '<div class="speed"><button data-r="0.8">0.8x</button><button data-r="1" aria-pressed="true">1.0x</button><button data-r="1.2">1.2x</button></div>'+
+   '<button class="pbtn" id="scriptBtn">スクリプトを表示</button></div>'+
+   '<p class="now" id="nowLine"><em>PLAYBACK</em>再生すると、ここに読み上げ中の一文が表示されます。</p>';
+  $("#lScript").innerHTML=it.script.map((l,i)=>'<div class="line" id="sl'+i+'"><b>'+esc(l.sp)+'</b>'+esc(l.t)+'</div>').join("");
+  $("#lScript").classList.remove("on");
+  $("#lQuestions").innerHTML=it.qs.map((q,i)=>questionHTML("l",q,i)).join("");
+  bindOptions("l"); $("#lScore").textContent=""; $("#lGrade").disabled=false;
+  $("#playBtn").addEventListener("click",playScript);
+  $("#stopBtn").addEventListener("click",stopAudio);
+  $("#scriptBtn").addEventListener("click",()=>{
+    const on=$("#lScript").classList.toggle("on");
+    $("#scriptBtn").textContent=on?"スクリプトを隠す":"スクリプトを表示";
+  });
+  $$("#lPlayer .speed button").forEach(b=>b.addEventListener("click",()=>{
+    S.rate=+b.dataset.r;
+    $$("#lPlayer .speed button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  }));
+}
+function stopAudio(){
+  if(window.speechSynthesis) window.speechSynthesis.cancel();
+  const pb=$("#playBtn"); if(pb) pb.textContent="音声を再生";
+  $$(".script .line").forEach(l=>l.classList.remove("active"));
+}
+function pickVoices(){
+  const vs=window.speechSynthesis?window.speechSynthesis.getVoices():[];
+  const en=vs.filter(v=>/^en(-|_)/i.test(v.lang));
+  return [en[0]||null,en[1]||en[0]||null];
+}
+function playScript(){
+  if(!window.speechSynthesis){$("#nowLine").innerHTML='<em>PLAYBACK</em>このブラウザは読み上げに対応していません。スクリプトを表示して読んでください。';return;}
+  stopAudio();
+  const it=LISTENING[S.lIdx], voices=pickVoices();
+  $("#playBtn").textContent="再生中…";
+  it.script.forEach((l,i)=>{
+    const u=new SpeechSynthesisUtterance(l.t);
+    u.lang="en-US"; u.rate=S.rate*0.95; u.pitch=l.v===0?1.12:0.92;
+    if(voices[l.v]) u.voice=voices[l.v];
+    u.onstart=()=>{
+      $("#nowLine").innerHTML='<em>'+esc(l.sp)+'</em>'+esc(l.t);
+      $$(".script .line").forEach(x=>x.classList.remove("active"));
+      const el=$("#sl"+i); if(el) el.classList.add("active");
+    };
+    if(i===it.script.length-1) u.onend=()=>{$("#playBtn").textContent="もう一度再生";};
+    window.speechSynthesis.speak(u);
+  });
+}
+$("#lGrade").addEventListener("click",()=>grade("l"));
+$("#lReset").addEventListener("click",()=>{stopAudio();S.lAns={};renderListening();});
+
+/* Vocabulary */
+function vFilter(){
+  S.vList=S.vLevel==="すべて"?VOCAB.slice():VOCAB.filter(v=>v.lv===S.vLevel);
+  if(S.vMode!=="card") S.vList.sort(()=>Math.random()-0.5);
+  S.vPos=0; S.vFlipped=false;
+}
+function renderVocab(){
+  const levels=["すべて","会話でも使う","論文でよく出る","ここで差がつく"];
+  $("#vPicker").innerHTML=levels.map(l=>'<button class="chip" data-lv="'+l+'" aria-pressed="'+(l===S.vLevel)+'">'+l+'</button>').join("")+
+   '<span style="width:14px"></span>'+
+   '<button class="chip" data-mode="card" aria-pressed="'+(S.vMode==="card")+'">カード</button>'+
+   '<button class="chip" data-mode="def" aria-pressed="'+(S.vMode==="def")+'">英英定義テスト</button>'+
+   '<button class="chip" data-mode="ja" aria-pressed="'+(S.vMode==="ja")+'">和訳テスト</button>';
+  $$('#vPicker [data-lv]').forEach(b=>b.addEventListener("click",()=>{S.vLevel=b.dataset.lv;vFilter();renderVocab();}));
+  $$('#vPicker [data-mode]').forEach(b=>b.addEventListener("click",()=>{S.vMode=b.dataset.mode;vFilter();renderVocab();}));
+
+  const item=S.vList[S.vPos];
+  $("#vMode").textContent={card:"カード",def:"英英定義テスト",ja:"和訳テスト"}[S.vMode];
+  $("#vTotal").textContent=S.vList.length+" 語";
+  $("#vPos").textContent=(S.vList.length?S.vPos+1:0)+" 語目";
+  $("#vBar").style.width=(S.vList.length?((S.vPos+1)/S.vList.length*100):0)+"%";
+  renderVLog();
+  if(!item){$("#vMain").innerHTML='<div class="card"><p class="hint">この条件に該当する語がありません。</p></div>';$("#vNav").innerHTML="";return;}
+
+  if(S.vMode==="card"){
+    $("#vMain").innerHTML='<div class="card" id="vCard"><p class="lv">'+esc(item.lv)+'</p>'+
+      '<p class="word">'+esc(item.w)+'</p><p class="pos">'+esc(item.p)+'</p>'+
+      (S.vFlipped
+        ?'<div class="back"><p class="def">'+linkify(item.d)+'</p><p class="mean">'+esc(item.m)+'</p><p class="ex">'+linkify(item.ex)+'</p><p class="exja">'+esc(item.ja)+'</p>'+(item.t?'<p class="trap">つまずきやすい点：'+esc(item.t)+'</p>':'')+'<p class="hint">定義や例文の語をクリックすると、その語の意味が出ます</p></div>'
+        :'<p class="hint">クリックすると英英定義・和訳・例文が出ます</p>')+'</div>';
+    $("#vCard").addEventListener("click",e=>{if(e.target.closest(".tk"))return;S.vFlipped=!S.vFlipped;renderVocab();});
+    $("#vNav").innerHTML=(S.vHistory.length?'<button class="btn-line" id="vBackW">← '+esc(S.vHistory[S.vHistory.length-1])+' に戻る</button>':'')+
+      '<button class="btn-line" id="vPrev">前の語</button><button class="btn-dark" id="vNext">次の語</button><button class="btn-line" id="vShuffle">シャッフル</button>';
+    if(S.vHistory.length) $("#vBackW").addEventListener("click",()=>{
+      const w=S.vHistory.pop();
+      const i=S.vList.findIndex(v=>v.w===w);
+      if(i>=0){S.vPos=i;S.vFlipped=true;}
+      renderVocab();
+    });
+    $("#vPrev").addEventListener("click",()=>{S.vPos=(S.vPos-1+S.vList.length)%S.vList.length;S.vFlipped=false;renderVocab();});
+    $("#vNext").addEventListener("click",()=>{S.vPos=(S.vPos+1)%S.vList.length;S.vFlipped=false;renderVocab();});
+    $("#vShuffle").addEventListener("click",()=>{S.vList.sort(()=>Math.random()-0.5);S.vPos=0;S.vFlipped=false;renderVocab();});
+    return;
+  }
+  const key=S.vMode==="def"?"d":"m";
+  const wrong=VOCAB.filter(v=>v.w!==item.w).sort(()=>Math.random()-0.5).slice(0,3);
+  const opts=[item,...wrong].sort(()=>Math.random()-0.5);
+  $("#vMain").innerHTML='<div class="q" style="padding:30px 28px">'+
+    '<div class="qhead"><p class="qn">'+(S.vMode==="def"?"CHOOSE THE DEFINITION":"CHOOSE THE MEANING")+'</p><span class="qtype">'+esc(item.lv)+'</span></div>'+
+    '<p style="font-family:var(--serif);font-size:34px;font-weight:600;margin:10px 0 2px">'+esc(item.w)+'</p>'+
+    '<p style="font-size:12.5px;color:var(--muted);letter-spacing:.08em;margin:0 0 20px">'+esc(item.p)+'</p>'+
+    opts.map(o=>'<label class="opt" data-ok="'+(o.w===item.w)+'">'+esc(o[key])+'</label>').join("")+
+    '<div class="exp" id="vExp"></div></div>';
+  $$("#vMain .opt").forEach(o=>o.addEventListener("click",()=>{
+    if($("#vExp").classList.contains("on")) return;
+    const ok=o.dataset.ok==="true";
+    $$("#vMain .opt").forEach(x=>{if(x.dataset.ok==="true") x.classList.add("correct");});
+    if(!ok) o.classList.add("wrong");
+    $("#vExp").innerHTML='<span class="verdict '+(ok?"ok":"ng")+'">'+(ok?"正解":"不正解")+'</span>'+
+      '<b>'+esc(item.w)+'</b>：'+linkify(item.d)+'<br>'+esc(item.m)+'<br>'+linkify(item.ex)+'<br><span style="color:var(--muted)">'+esc(item.ja)+'</span>'+
+      (item.t?'<span class="note-r">つまずきやすい点：'+esc(item.t)+'</span>':'');
+    $("#vExp").classList.add("on");
+    S.rec.v[0]+=ok?1:0; S.rec.v[1]++; S.vLog.push({w:item.w,ok:ok});
+    updateRecord(); renderVLog();
+  }));
+  $("#vNav").innerHTML='<button class="btn-dark" id="vNext2">次の問題</button><button class="btn-line" id="vBack">カードで確認する</button>';
+  $("#vNext2").addEventListener("click",()=>{S.vPos=(S.vPos+1)%S.vList.length;renderVocab();});
+  $("#vBack").addEventListener("click",()=>{S.vMode="card";S.vFlipped=true;renderVocab();});
+}
+function renderVLog(){
+  $("#vLog").innerHTML=S.vLog.slice(-40).reverse().map(x=>
+    '<div><span>'+esc(x.w)+'</span><span class="'+(x.ok?"ok":"ng")+'">'+(x.ok?"正解":"不正解")+'</span></div>').join("");
+}
+
+/* Score designer */
+function renderSim(){
+  const r=+$("#sR").value,l=+$("#sL").value,s=+$("#sS").value,w=+$("#sW").value;
+  $("#vR").textContent=r;$("#vL").textContent=l;$("#vS").textContent=s;$("#vW").textContent=w;
+  const tot=r+l+s+w;
+  $("#simTotal").innerHTML=tot+'<small> / 120</small>';
+  const gap=S.target-tot;
+  const sec=[["Reading",r],["Listening",l],["Speaking",s],["Writing",w]].sort((a,b)=>a[1]-b[1]);
+  let msg="";
+  if(gap<=0){
+    msg='目標の <b>'+S.target+'</b> に到達しています。ここからは点を上げるより、出願書類とスコアの送付手配に時間を移してください。'+
+        '併願校のなかに、より高い基準を置く学部がないかも確認を。';
+  }else{
+    const low=sec[0],low2=sec[1];
+    msg='目標の <b>'+S.target+'</b> まであと <b>'+gap+'点</b>。'+
+      'いちばん低いのは <b>'+low[0]+'（'+low[1]+'）</b>、次が <b>'+low2[0]+'（'+low2[1]+'）</b> です。'+
+      (low[0]==="Reading"||low2[0]==="Reading"
+        ? 'Readingは伸びしろが残りやすく、語彙と設問タイプの対策が最短距離です。'
+        : '')+
+      (l<28?' Listeningが28未満なら、まずここを詰めるほうが全体の底上げになります。':'')+
+      (w<=r&&w<24?' Writingは内容ではなく型で点が動きます。同じ構成を反復してください。':'');
+  }
+  $("#simGap").innerHTML=msg;
+}
+["sR","sL","sS","sW"].forEach(id=>$("#"+id).addEventListener("input",renderSim));
+$$("#simTarget button").forEach(b=>b.addEventListener("click",()=>{
+  S.target=+b.dataset.t;
+  $$("#simTarget button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  renderSim();
+}));
+
+/* Planner */
+const PLAN=[
+ {w:20,h:"語彙と設問タイプを固める",p:"この時期にやるのは、本番形式より土台です。アカデミック語彙を毎日10分、Readingは設問タイプ別に解いて、どのタイプで落とすかを特定します。"},
+ {w:12,h:"1回目の本番受験",p:"仕上がってから受けるのではなく、現在地を出すために受けます。セクション別の点が出て初めて、残り時間をどこに使うかが決まります。"},
+ {w:8,h:"弱いセクションだけに寄せる",p:"1回目の結果で最も低かったセクションに学習時間の6割を投じます。得意なセクションは維持で十分です。"},
+ {w:6,h:"最後の受験日の目安",p:"この時期までに受け終えると、結果の確認と大学への送付手配に余裕が残ります。再受験の可能性も考え、ここを最終ラインとして組んでください。"},
+ {w:4,h:"スコアの送付手配を完了する",p:"大学への直送は、申し込みから到着まで時間がかかります。締切「必着」の場合、この時点で手配が終わっていないと危険です。"},
+ {w:3,h:"英語以外の書類を揃える",p:"成績証明書、在留や在籍を示す書類、推薦状、志望理由書。学校や第三者に依頼するものから先に動かします。"},
+ {w:1,h:"提出物の最終確認",p:"スコアが大学に到着しているか、出願形式（郵送・オンライン）と締切時刻を確認します。ここで足りないものが見つかっても間に合う状態にしておくこと。"}
+];
+function renderPlan(){
+  const dl=$("#deadline").value;
+  if(!dl){$("#timeline").innerHTML='<p style="color:#A9B2BC">締切日を入力すると、逆算した予定を表示します。</p>';return;}
+  const d=new Date(dl+"T00:00:00");
+  const today=new Date(); today.setHours(0,0,0,0);
+  const fmt=x=>x.getFullYear()+"年"+(x.getMonth()+1)+"月"+x.getDate()+"日";
+  const left=Math.round((d-today)/86400000);
+  const head='<p style="color:#D5D9DE;margin:0 0 26px">締切まで <b style="font-family:var(--serif);font-size:26px;color:#fff">'+
+    (left>=0?left:0)+'</b> 日。以下は一般的な目安です。</p>';
+  const items=PLAN.map(p=>{
+    const t=new Date(d.getTime()-p.w*7*86400000);
+    const past=t<today;
+    return '<div class="tlitem'+(past?" past":"")+'"><p class="when">'+fmt(t)+'　／　締切の'+p.w+'週間前'+(past?"（経過済み）":"")+'</p>'+
+      '<h4>'+esc(p.h)+'</h4><p>'+esc(p.p)+'</p></div>';
+  }).join("");
+  const last='<div class="tlitem"><p class="when">'+fmt(d)+'</p><h4>出願締切</h4><p>提出方法と締切時刻は大学ごとに異なります。必着か消印有効かを必ず確認してください。</p></div>';
+  $("#timeline").innerHTML=head+items+last;
+}
+$("#deadline").addEventListener("change",renderPlan);
+(function(){
+  const d=new Date(); d.setMonth(d.getMonth()+4);
+  $("#deadline").value=d.toISOString().slice(0,10);
+})();
+
+/* Checklist */
+$("#checklist").innerHTML=CHECKS.map((c,i)=>
+ '<div class="ci" data-i="'+i+'"><span class="box"></span><div><h4>'+esc(c.h)+'</h4><p>'+esc(c.p)+'</p></div></div>').join("");
+$$(".ci").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("done")));
+
+/* Record */
+function updateRecord(){
+  $("#recR").innerHTML=S.rec.r[0]+'<small> / '+S.rec.r[1]+'</small>';
+  $("#recL").innerHTML=S.rec.l[0]+'<small> / '+S.rec.l[1]+'</small>';
+  $("#recV").innerHTML=S.rec.v[0]+'<small> / '+S.rec.v[1]+'</small>';
+}
+
+/* init */
+renderReading(); renderListening(); vFilter(); renderVocab(); renderSim(); renderPlan(); updateRecord();
+window.addEventListener("beforeunload",stopAudio);
+</script>
+</body>
+</html>
